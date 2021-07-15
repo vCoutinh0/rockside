@@ -13,9 +13,8 @@ html {
 }
 
 .container {
-    margin: 5rem auto;
+    margin: 3rem auto;
     width: 50%;
-    height: 173rem;
 }
 
 header {
@@ -24,12 +23,13 @@ header {
     margin-bottom: 5px;
 }
 
-header hr{ 
+/* header > hr{ 
+    position: relative;
     width: 100%;
     border: black solid 0.1px;
-    /* top: 10px; */
-    /* margin-bottom: 10px; */
-}
+    bottom: 21px;
+   
+} */
 
 header nav {
     display: flex;
@@ -46,7 +46,6 @@ header nav a {
     font-size: clamp(1.3rem, 1vw, 2.5rem);
 
     color: black;
- 
 }
 
 header nav a:hover {
@@ -72,8 +71,7 @@ main .media {
 .media span{
     background-color: black;
     height: 5rem;
-    padding: 1.5rem;
-    padding-left: 1.6rem;
+    padding: 1.5rem 1.5rem;
     display: flex;
     align-items: center;
 }
@@ -97,22 +95,53 @@ main .news span{
     height: 5rem;
 
     display: flex;
-    justify-content: center;
-    align-items: center;        
+    justify-content: space-between;
+    align-items: center;     
+    padding: 0 1rem;
 }
 
-.news h2::before {
-    content: '\2193';
-    color: white;
-    
-} 
-.news h2::after {
-    content: '\2193';
-    color: white;
+main .news-content {
+    display: grid;
+    grid-template-areas: 
+    "1 2 3"
+    "4 5 6";
+    grid-template-columns: 28% 28% 28%;
+    grid-template-rows: 30rem 30rem;
+    row-gap: 4rem;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
+}
+
+main .news-content div {
+    border: black 1px solid;
+    /* height: 30rem; */
+}
+
+hr {
+    position: relative;
+    bottom: 30px;
+    width: 100%;
+    border: black solid 1px;
 }
 
 footer {
     background-color: black;
     width: 100%;
-    height: 9.9rem;
+    height: 9.9rem;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+footer a{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 5rem;
+    padding: 1rem;
+    color: white;  
+}
+
+footer i {
+    margin-right: 1rem;
+}
+
