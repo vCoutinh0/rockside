@@ -14,9 +14,23 @@ html {
 
 header {
     background-color: black;  
-    height: 350px;
+    height: 47.5rem;
     margin-bottom: 2px;
+    /* position: relative; */
 }
+
+header h1 {
+    color: white;
+    font-family: var(--titlefont);
+    font-size: 10rem;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    text-shadow: rgb(10 189 240 / 30%) 3px 3px 0px, rgb(254 1 1 / 30%) -3px -3px 0px;
+
+}
+
+
 
 header img {
     width: 35rem;
@@ -33,7 +47,7 @@ section .news-content > div:first-child {
 
 section .news-content > div:first-child {
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 15px;
     display: flex;
 }
 
@@ -86,9 +100,14 @@ footer a{
         display: none;
     }
 
-    /* footer i {
-        width: 50%;
-    } */
+    footer a {
+        font-size: 1.7rem;
+        margin-right: 1rem;
+    }
+
+    footer a:last-child {
+        margin-right: 0;
+    }
 }
 
 /* Tablet Styles */
@@ -96,9 +115,8 @@ footer a{
 
     header {
         display: flex;
-        justify-content: center;
     }
-    
+
     nav {
         display: none;
     }
@@ -118,12 +136,29 @@ footer a{
     section .music{
         height: 350px;
     }
+    footer a {
+        font-size: 2rem;
+        margin-right: 5rem;
+    }
+    footer a:last-child {
+        margin-right: 0;
+    }
+
 }
 
 @media only screen and (min-width: 961px) {
     #container {
         margin: 3rem auto;
         width: 50%;
+    }
+
+    header h1 {
+        top: 5rem;
+        left: 10rem;
+    }
+
+    header h1:last-of-type {
+        left: 20rem;
     }
 
     header nav {
