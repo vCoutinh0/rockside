@@ -16,7 +16,7 @@ header {
     background-color: black;  
     height: 47.5rem;
     margin-bottom: 2px;
-    /* position: relative; */
+    position: relative;
 }
 
 header h1 {
@@ -25,24 +25,49 @@ header h1 {
     font-size: 10rem;
     font-weight: 400;
     font-style: normal;
-    position: relative;
-    text-shadow: rgb(10 189 240 / 30%) 3px 3px 0px, rgb(254 1 1 / 30%) -3px -3px 0px;
-
+    position: absolute;
+    text-shadow: rgb(10 189 240 / 30%) 3px 3px 0px, rgb(254 1 1 / 40%) -3px -3px 0px;
+    z-index: 1;
 }
 
+header > img {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+}
 
+header .icons img{
+    width: 115px;
+    
+}
 
-header img {
-    width: 35rem;
+header .icons img:nth-child(1) {
+    position: relative;
+    top: 28rem;
+    left: 10rem; 
+}
+
+/* header .icons img:nth-child(2) {
+    position: absolute;
+    top: 10rem;
+    right: 45rem;
+    margin: 0 10px;
+} */
+
+header .icons img:nth-child(2) {
+    position: absolute;
+    right: 25px;
+    top: 90px;
 }
 
 section.media div> div:first-child,
 section .news-content > div:first-child {
     background-color: black;
-    height: 50px;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 section .news-content > div:first-child {
@@ -55,6 +80,7 @@ main h2{
     font-family: var(--textfont);
     color: white;
     font-weight: normal;
+    text-align: center;
 }
 
 footer {
@@ -79,10 +105,13 @@ footer a{
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
 
+    main h2 {
+        font-size: 3rem;
+    }
+
     nav {
         display: none;
     }
-
 
     section .pictures{
         height: 350px;   
@@ -111,10 +140,9 @@ footer a{
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px){
-
-    header {
-        display: flex;
+@media only screen and (min-width: 601px) and (max-width: 1079px){
+    header .icons img:nth-child(2) {
+        display: none;
     }
 
     nav {
@@ -146,19 +174,20 @@ footer a{
 
 }
 
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1080px) {
     #container {
         margin: 3rem auto;
-        width: 50%;
+        width: min(80%, 120rem);
     }
 
     header h1 {
-        top: 5rem;
-        left: 10rem;
+        top: 90px;
+        left: 80px;
     }
 
     header h1:last-of-type {
-        left: 20rem;
+        left: 15rem;
+        top: 20rem;
     }
 
     header nav {
@@ -181,10 +210,12 @@ footer a{
     header nav a:hover {
         background-color: black;
         color: white;
+        transition: 0.8s;
     }
 
     main h2 {
-        font-size: min(1.2vw, 2.2rem);
+        font-size: min(2.7rem, 3rem);
+
     }
 
     main .media {
@@ -193,24 +224,11 @@ footer a{
         grid-template-columns: 67% 30%;
     }
 
-    .media span{
-        background-color: black;
-        height: 5rem;
-        padding: 1.5rem 1.5rem;
-        display: flex;
-        align-items: center;
-    }
-
     .media .pictures div,
-    main .media .music div{
+    .media .music div{
         border: black 1px solid;
         height: 20rem;
         margin: 1rem auto;  
-    }
-
-    .media .pictures div {
-        display: flex;
-        justify-content: flex-end;
     }
 
     main .news-content div {
